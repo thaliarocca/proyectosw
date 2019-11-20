@@ -1,5 +1,154 @@
-{% extends 'basic.html' %}
 {% load static %}
-{% block main %}
-<h1>Inicio</h1>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,  minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+      <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+      <title>DecoHome</title>
+    </head>
+    <body>
+      <header class="site-header inicio">
+        <div class="contenedor contenido-header">
+          <div class="barra">
+            <div class="logo">
+              <a href="/"><img src="{% static 'img/logo.png' %}" alt="Logotipo de la web"></a>
+              <a href="#" class="btn-menu" id="" onclick="cambiar()"><i class="fa fa-bars" aria-hidden="true" id="bars"></i><i class="fa fa-times" id='times'></i></a>
+            </div>
+            <nav class="navegacion" id="nav">
+              <a href="/productos">Productos</a>
+              <a href="/cita">Cita</a>
+              <a href="#">Incia Sesion</a>
+              <a href="#">Blog</a>
+            </nav>
+          </div>
+          <h1>Venta de Muebles y Accesorios de Decoracion</h1>
+        </div>
+      </header>
+      <section class="contenedor seccion">
+        <h2 class="fw-300 centrar-texto">Más Sobre Nosotros</h2>
+        <div class="iconos-nosotros">
+          <div class="icono">
+            <img src="{% static 'img/icono1.svg' %}" alt="Opcion1">
+            <h3>NOSOTROS</h3>
+            <p>Somos una empresa dedicada a la decoración de interiores de forma profesional.</p>
+          </div>
+          <div class="icono">
+            <img src="{% static 'img/icono2.svg' %}" alt="Opcion2">
+            <h3>MISION</h3>
+            <p>Ofrecer una amplia gama de modelos de ambientes, bien diseñados y funcionales.</p>
+          </div>
+          <div class="icono">
+            <img src="{% static 'img/icono3.svg' %}" alt="Opcion3">
+            <h3>VISION</h3>
+            <p>Mejorar la vida diaria de muchas personas ofreciéndoles un ambiente favorable.</p>
+          </div>
+        </div>
+      </section>
+
+      <main class="contenedor seccion"><!--contenido mas importante-->
+        <h2 class="fw-300 centrar-texto">Anuncios de Productos</h2>
+        <div class="contenedor-anuncios">
+          <div class="anuncio">
+            <img src="{% static 'img/anuncio1.jpg' %}" alt="anuncio1">
+            <div class="contenido-anuncio">
+              <h3>Sala de Estudio</h3>
+              <p>Conjunto de muebles de madera para una sala de estudio moderna y agradable.</p>
+              <p class="precio">S/. 490</p>
+              <div class="garantia">
+                <p>Garantía: 1 año</p>
+              </div>
+              <a href="/producto" class="boton boton-gris">Ver Producto</a>
+            </div>
+          </div>
+          <div class="anuncio">
+            <img src="{% static 'img/anuncio2.jpg' %}" alt="anuncio2">
+            <div class="contenido-anuncio">
+              <h3>Comedor</h3>
+              <p>Conjunto de comedor blanco de madera para 6 personas y adaptable para 8.</p>
+              <p class="precio">S/. 750</p>
+              <div class="garantia">
+                <p>Garantía: 2 años</p>
+              </div>
+              <a href="/producto" class="boton boton-gris">Ver Producto</a>
+            </div>
+          </div>
+          <div class="anuncio">
+            <img src="{% static 'img/anuncio3.jpg' %}" alt="anuncio3">
+            <div class="contenido-anuncio">
+              <h3>Sala de Estar</h3>
+              <p>Modernos muebles de madera artesanales, incluye objetos decorativos.</p>
+              <p class="precio">S/. 990.99</p>
+              <div class="garantia">
+                <p>Garantía: 2 años</p>
+              </div>
+              <a href="/producto" class="boton boton-gris">Ver Producto</a>
+            </div>
+          </div>
+        </div>
+        <div class="ver-todas">
+          <a href="/producto" class="boton boton-rojo">Ver Todos</a>
+        </div>
+
+      </main>
+      <section class="contacto">
+        <div class="contenedor contenido-contacto">
+          <h2>Comunicate con nosotros</h2>
+          <p>¡No esperes más para poder renovar tu hogar! Entra y podrás programar una cita con cualquiera de nuestros expertos asesores.</p>
+          <a href="contacto.html" class="boton boton-rojo">Contáctanos</a>
+        </div>
+      </section>
+      <div class="seccion-inf contenedor">
+        <section class="blog">
+          <h3 class="centrar-texto fw-300 seccion">Blog de la web</h3>
+          <article class="art-blog">
+            <div class="img-blog">
+              <img src="{% static 'img/articulo1.jpg' %}" alt="articulo1">
+            </div>
+            <div class="text-blog">
+              <a href="#"><h4>Los colores definen tu hogar</h4></a>
+              <p>Escrito el: <span> 10/04/2019 </span> por: <span> Administrador</span></p>
+              <p>Descubre porque es importante escoger los colores adecuados para cada ambiente.</p>
+            </div>
+          </article>
+          <article class="art-blog">
+            <div class="img-blog">
+              <img src="{% static 'img/articulo2.jpg' %}" alt="articulo2">
+            </div>
+            <div class="text-blog">
+              <a href="#"><h4>La terraza de tus sueños</h4></a>
+              <p>Escrito el: <span> 20/05/2019 </span> por: <span> Administrador</span></p>
+              <p>¿Alguna vez soñaste en tener una terraza de película? Aquí te contamos como hacerlo realidad.</p>
+            </div>
+          </article>
+        </section>
+        <section class="testimoniales">
+          <h3 class="centrar-texto fw-300">Testimoniales</h3>
+          <div class="contenedor-test">
+            <img src="{% static 'img/comillas.svg' %}">
+            <blockquote><!--etiqueta para testimoniales-->
+              Esta es la opinion de un cliente que utilizo la pagina y adquirió algún producto, se describe como fue su atención
+            </blockquote>
+            <img src="{% static 'img/persona.svg' %}">
+            <p>Nombre del Cliente</p>
+          </div>
+        </section>
+      </div>
+      <footer class="site-footer">
+        <div class="contenedor contenedor-foot">
+          <nav class="navegacion">
+            <a href="/productos">Productos</a>
+            <a href="/cita">Cita</a>
+            <a href="#">Incia Sesion</a>
+            <a href="#">Blog</a>
+          </nav>
+          <p>Todos los Derechos Reservados 2019 &copy;</p>
+        </div>
+      </footer>
+      <script src="{% static 'js/script.js' %}"></script>
+    </body>
+</html>

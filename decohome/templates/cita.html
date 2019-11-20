@@ -1,5 +1,44 @@
 {% extends 'basic.html' %}
 {% load static %}
-{% block main %}
-<h1>Cita</h1>
+{% block content %}
+<h1 class="fw-300 centrar-texto">Programe una Cita con un Ascesor</h1>
+<main class="contenedor contenido-centrado">
+    <img src="{% static 'img/contacto.jpg' %}" alt="Contactanos">
+    <form action="#"  method='post' autocomplete='off'>
+      <fieldset>
+        <legend>Información Personal</legend>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Tu Nombre" title="Nombre" required>
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" placeholder="Tu Teléfono" title="Teléfono" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" placeholder="Tu Correo Electrónico" title="Correo Electrónico" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" placeholder="Añade un comentario"></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Informacion Sobre Espacio a Diseñar</legend>
+        <label for="opciones">Espacio que desea diseñar:</label>
+        <select id="opciones" title="Espacio a diseñar" required>
+          <option value="" disabled selected>--Seleccione--</option>
+          <option value="comedor">Comedor</option>
+          <option value="baño">Baño</option>
+          <option value="cocina">Cocina</option>
+          <option value="sala">Sala</option>
+          <option value="dormitorio">Dormitorio</option>
+        </select>
+        <label for="presupuesto">Prespuesto:</label>
+        <input type="number" min=100 id="presupuesto"  placeholder="S/. " title="Presupuesto" required>
+      </fieldset>
+      <fieldset>
+        <legend>Horario de la Cita</legend>
+        <label for="fecha">Dia:</label>
+        <input type="date" id="fecha" title="Fecha"required>
+        <label for="Hora">Hora:</label>
+        <input type="time" min="09:00" max="18:00" id="hora" title="Hora"required>
+      </fieldset>
+      <input type="submit" value="Enviar" class="boton boton-rojo env" onclick='validateForm(this.form);'>
+    </form>
+  </main>
 {% endblock %}

@@ -1,27 +1,45 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DecoHome</title>
-	<link rel="stylesheet" href="">
-</head>
-<body>
-	<header id="header" class="">
-		<div class="menu">
-			<a href="/" title="">Inicio</a>
-			<a href="/cita" title="">Sacar Cita</a>
-			<a href="/productos" title="">Ver Productos</a>
-		</div>
-	</header><!-- /header -->	
-	<main>
-	{% block main %}
-	{% endblock %}
-	</main>
-	<footer>
-	{% block footer %}
-	{% endblock %}
-	</footer>
-</body>
+<html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+      <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+      <title>DecoHome</title>
+    </head>
+    <body>
+      <header class="site-header">
+        <div class="contenedor contenido-header">
+          <div class="barra">
+            <div class="logo">
+              <a href="/"><img src="{% static 'img/logo.png' %}" alt="Logotipo de la web"></a>
+              <a href="#" class="btn-menu" id="" onclick="cambiar()"><i class="fa fa-bars" aria-hidden="true" id="bars"></i><i class="fa fa-times" id='times'></i></a>
+            </div>
+            <nav class="navegacion" id="nav">
+				<a href="/productos">Productos</a>
+				<a href="/cita">Cita</a>
+				<a href="#">Incia Sesion</a>
+				<a href="#">Blog</a>
+            </nav>
+        </div>
+      </header>
+      {% block content %}
+	    {% endblock %}
+      <footer class="site-footer">
+        <div class="contenedor contenedor-foot">
+          <nav class="navegacion">
+            <a href="/productos">Productos</a>
+            <a href="/cita">Cita</a>
+            <a href="#">Incia Sesion</a>
+            <a href="#">Blog</a>
+          </nav>
+          <p>Todos los Derechos Reservados 2019 &copy;</p>
+        </div>
+      </footer>
+      <script src="{% static 'js/script.js' %}"></script>
+    </body>
 </html>

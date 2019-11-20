@@ -1,5 +1,21 @@
 {% extends 'basic.html' %}
 {% load static %}
-{% block main %}
-<h1>Productos</h1>
+{% block content %}
+<main class="contenedor seccion"><!--contenido mas importante-->
+    <h2 class="fw-300 centrar-texto">Anuncios de Productos</h2>
+    <div class="contenedor-anuncios">
+      <div class="anuncio anuncio-esp">
+        <img src="{% static 'img/anuncio1.jpg' %}" alt="anuncio1">
+        <div class="contenido-anuncio">
+          <h3>Sala de Estudio</h3>
+          <p>Conjunto de muebles de madera para una sala de estudio moderna y agradable.</p>
+          <p class="precio">S/. 490</p>
+          <div class="garantia">
+            <p>Garantía: 1 año</p>
+          </div>
+          <a href="producto.html" class="boton boton-gris">Ver Producto</a>
+        </div>
+      </div>
+    </div>
+  </main>
 {% endblock %}
